@@ -1,0 +1,241 @@
+:root {
+    --main-color: rgb(59 80 56);
+    --main-color-low: rgb(59 80 56 / 50%);
+    --second-color: rgb(151 162 150);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: var(--main-color);
+    color: white;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-color: #EEE;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 150px 70px repeat(2, 267px) repeat(4, 200px) repeat(9, 1fr) 70px;
+}
+
+header {
+    grid-column: span 10;
+    grid-row: span 1;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    padding-left: 80px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    align-items: center;
+    gap: 20px;
+    background-image: linear-gradient(to right, var(--main-color) 30%, var(--second-color) 100%);
+}
+
+header img.logo {
+    grid-column: span 1;
+    margin-left: 60px;
+}
+
+header label {
+    grid-column: span 6;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+header img.search-logo {
+    grid-column: span 1;
+    margin-left: 80%;
+}
+
+header input {
+    grid-column: span 2;
+    background-color: #0f2820;
+    height: 40px;
+    width: 200px;
+}
+
+nav {
+    z-index: 1;
+    grid-column: span 10;
+    grid-row: span 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    height: 70px;
+    background-image: linear-gradient(to right, var(--main-color) 30%, var(--second-color) 100%);
+}
+
+nav span {
+    font-size: 18px;
+    width: calc(100% / 5);
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+nav span a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav span:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to right bottom,
+            rgb(173, 167, 167) 30%,
+            var(--second-color) 100%);
+    color: var(--main-color);
+
+    a {
+        color: var(--main-color);
+    }
+}
+
+nav span a:hover {
+    color: var(--main-color);
+}
+
+div.preAbout {
+    overflow: hidden;
+    grid-column: span 10;
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 60%;
+    position: relative;
+}
+
+div.preAbout::before {
+    content: " Design Your Tote Bag Now !";
+    position: absolute;
+    color: var(--main-color);
+    font-size: 50px;
+    top: 100px;
+    font-weight: bold;
+    border-left: 5px solid var(--main-color);
+}
+
+section {
+    padding: 20px;
+}
+
+section.section.one {
+    grid-column: 2 / 7;
+    grid-row: span 4;
+}
+
+div.img-about {
+    grid-column: 7 / 10;
+    grid-row: 6 / 9;
+    margin-left: 40px;
+    transition: 0.3s;
+    perspective: 800px;
+    perspective-origin: center center;
+}
+
+div.img-about:hover {
+    transform: translate3d(-30px, 0, 30px);
+}
+
+
+.about p,
+.top-serv p {
+    font-size: 20px;
+}
+
+.about p span {
+    font-weight: bold;
+    color: var(--second-color);
+}
+
+section.section.two {
+    grid-column: 2 / 10;
+    grid-row: span 9;
+}
+
+.top-serv {
+    margin-bottom: 20px;
+}
+
+.bottom-serv {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(3, auto);
+    overflow: hidden;
+
+    justify-content: space-around;
+    align-content: center;
+    transition: transform 1s ease 0s;
+    perspective-origin: center center;
+    perspective: 300px;
+    gap: 35px;
+    padding: 50px;
+}
+
+.serv {
+    overflow: hidden;
+    border-bottom: 2px solid var(--main-color);
+    box-shadow: 0px 0px 8px 3px var(--main-color);
+}
+
+.serv.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.serv.wide {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.serv:hover {
+    cursor: pointer;
+    border-bottom: none;
+    box-shadow: 0px 0px 12px 8px var(--main-color);
+    transform: translate3d(0, 0, 20px);
+}
+
+
+footer {
+    grid-column: span 10;
+    grid-row: span 1;
+    background-image: linear-gradient(to right, var(--main-color) 30%, var(--second-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright {
+    font-size: 14px;
+    color: white;
+}
